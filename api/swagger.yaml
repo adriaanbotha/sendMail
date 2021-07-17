@@ -9,10 +9,12 @@ info:
   license:
     name: "Apache 2.0"
     url: "http://www.apache.org/licenses/LICENSE-2.0.html"
-host: "virtserver.swaggerhub.com"
-basePath: "/adriaan.botha/quickMail/1.0.0"
+#host: "virtserver.swaggerhub.com"
+host: "localhost:8080"
+basePath: "/"
+#basePath: "/adriaan.botha/quickMail/1.0.0"
 schemes:
-- "https"
+- "http"
 paths:
   /sendmail:
     post:
@@ -42,12 +44,10 @@ definitions:
   EmailBody:
     type: "object"
     required:
-    - "cc"
     - "from"
-    - "html"
+    - "to"
     - "subject"
     - "text"
-    - "to"
     properties:
       from:
         type: "string"

@@ -3,7 +3,7 @@
 var utils = require('../utils/writer.js');
 var Public = require('../service/PublicService');
 
-module.exports.sendMail = function sendMail (req, res, next) {
+module.exports.sendMail = function sendMail (req, res) {
   var emailBody = req.swagger.params['emailBody'].value;
   Public.sendMail(emailBody)
     .then(function (response) {
