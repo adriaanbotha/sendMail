@@ -1,0 +1,91 @@
+---
+swagger: "2.0"
+info:
+  description: "This is a send email API"
+  version: "1.0.0"
+  title: "Send Email API"
+  contact:
+    email: "adriaan.botha@gmail.com"
+  license:
+    name: "Apache 2.0"
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+host: "virtserver.swaggerhub.com"
+basePath: "/adriaan.botha/quickMail/1.0.0"
+schemes:
+- "https"
+paths:
+  /sendmail:
+    post:
+      tags:
+      - "public"
+      summary: "send an email"
+      description: "Sends an email with Mailgun or Sendgird"
+      operationId: "sendMail"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "emailBody"
+        description: "Email body to send"
+        required: false
+        schema:
+          $ref: "#/definitions/EmailBody"
+      responses:
+        "200":
+          description: "mail successfully sent"
+        "400":
+          description: "invalid input, object invalid"
+      x-swagger-router-controller: "Public"
+definitions:
+  EmailBody:
+    type: "object"
+    required:
+    - "cc"
+    - "from"
+    - "html"
+    - "subject"
+    - "text"
+    - "to"
+    properties:
+      from:
+        type: "string"
+        example: "someone@example.org"
+      to:
+        type: "string"
+        example: "Some One <someone@example.org>"
+      cc:
+        $ref: "#/definitions/cc"
+      subject:
+        type: "string"
+        example: "Test Email"
+      text:
+        type: "string"
+        example: "Test email body"
+      html:
+        type: "string"
+        example: "<p>This is a test email</p>"
+    example:
+      cc:
+        name: "Some One"
+        email: "someone@example.org"
+      subject: "Test Email"
+      from: "someone@example.org"
+      html: "<p>This is a test email</p>"
+      to: "Some One <someone@example.org>"
+      text: "Test email body"
+  cc:
+    required:
+    - "email"
+    properties:
+      name:
+        type: "string"
+        example: "Some One"
+      email:
+        type: "string"
+        format: "email"
+        example: "someone@example.org"
+    example:
+      name: "Some One"
+      email: "someone@example.org"
