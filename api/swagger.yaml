@@ -51,31 +51,33 @@ definitions:
     properties:
       from:
         type: "string"
-        example: "someone@example.org"
       to:
         type: "string"
-        example: "Some One <someone@example.org>"
       cc:
-        $ref: "#/definitions/cc"
+        type: "array"
+        items:
+          $ref: "#/definitions/recipient"
+      bcc:
+        type: "array"
+        items:
+          $ref: "#/definitions/recipient"
       subject:
         type: "string"
-        example: "Test Email"
       text:
         type: "string"
-        example: "Test email body"
       html:
         type: "string"
-        example: "<p>This is a test email</p>"
     example:
+      to: "Your name <yourname@email.org>"
+      from: "bosotter@protonmail.com"
       cc:
-        name: "Some One"
-        email: "someone@example.org"
+        [ {name: "Some One", email: "someoneCC@example.org"} ]
+      bcc:
+        [ { name: "Some One", email: "someoneBCC@example.org"} ]
       subject: "Test Email"
-      from: "someone@example.org"
-      html: "<p>This is a test email</p>"
-      to: "Some One <someone@example.org>"
-      text: "Test email body"
-  cc:
+      html: "<p>This is a test email from Sendgrid or MailGun</p>"
+      text: "This is a test email from Sendgrid or MailGun"
+  recipient:
     required:
     - "email"
     properties:

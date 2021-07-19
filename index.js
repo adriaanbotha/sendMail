@@ -1,8 +1,8 @@
 'use strict';
 
 var fs = require('fs'),
-    path = require('path'),
-    http = require('http');
+  path = require('path'),
+  http = require('http');
 
 var app = require('connect')();
 var swaggerTools = require('swagger-tools');
