@@ -1,7 +1,7 @@
 'use strict';
 
 const sgMail = require('@sendgrid/mail');
-sgMail.setApiKey('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');
+sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 /**
  * send an email
