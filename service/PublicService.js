@@ -2,12 +2,10 @@
 
 const sgMail = require('@sendgrid/mail');
 // const mailgun = require("mailgun-js");
+sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
-const API_KEY = '7e1e06fb21aa4553e60ff32e50f75ea8-c485922e-49118b18';
-const DOMAIN = 'sandbox9fd50e4ed6d64dff99aa02eb76b5c9a1.mailgun.org';
-
-// const API_KEY = process.env.MAILGUN_API_KEY;
-// const DOMAIN = process.env.MAILGUN_DOMAIN;
+const API_KEY = process.env.MAILGUN_API_KEY;
+const DOMAIN = process.env.MAILGUN_DOMAIN;
 const mgMail = require('mailgun-js')({apiKey: API_KEY, domain: DOMAIN});
 
 /**
