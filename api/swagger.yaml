@@ -54,13 +54,9 @@ definitions:
       to:
         type: "string"
       cc:
-        type: "array"
-        items:
-          $ref: "#/definitions/recipient"
+        type: "string"
       bcc:
-        type: "array"
-        items:
-          $ref: "#/definitions/recipient"
+        type: "string"
       subject:
         type: "string"
       text:
@@ -71,23 +67,9 @@ definitions:
       to: "Your name <yourname@email.org>"
       from: "bosotter@protonmail.com"
       cc:
-        [ {name: "Some One", email: "someoneCC@example.org"} ]
+        "Someone CC <someoneCC@example.org>"
       bcc:
-        [ { name: "Some One", email: "someoneBCC@example.org"} ]
+        "Soeone BCC <someoneBCC@example.org>"
       subject: "Test Email"
       html: "<p>This is a test email from Sendgrid or MailGun</p>"
       text: "This is a test email from Sendgrid or MailGun"
-  recipient:
-    required:
-    - "email"
-    properties:
-      name:
-        type: "string"
-        example: "Some One"
-      email:
-        type: "string"
-        format: "email"
-        example: "someone@example.org"
-    example:
-      name: "Some One"
-      email: "someone@example.org"
