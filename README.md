@@ -21,7 +21,7 @@ _The reason for this is to deploy the Mailgun and Sendgrid API keys and keep it 
 
 1. Expand the Swagger UI to look like this
 
-
+![Expand the Swagger UI to look like this](/assets/img/swag1 "Swagger UI") | height="200"
 
 <img src="/assets/img/swag1" alt="Swagger UI" width="200" height="200">
 
