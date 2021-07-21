@@ -1,9 +1,7 @@
 'use strict';
 
 const sgMail = require('@sendgrid/mail');
-// const mailgun = require("mailgun-js");
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
-
 const API_KEY = process.env.MAILGUN_API_KEY;
 const DOMAIN = process.env.MAILGUN_DOMAIN;
 const mgMail = require('mailgun-js')({apiKey: API_KEY, domain: DOMAIN});
@@ -26,17 +24,13 @@ const sendMail = async function (emailBody)  {
       result = await sendMailgunEmail(emailBody)
     }
     catch (err) {
-      console.log('running SendgridMail now................');
-      console.log('inside first catch-----');
       // When Mailgun email fails use Sendgrid as a backup
       result = await sendGridMail(emailBody)
     }
   }
   catch (error) {
-    console.error('Inside second catch-----------------', error);
     return error
   }
-  console.log('-.....----....----.....', result);
   return result
 }
 

@@ -9,33 +9,33 @@ info:
   license:
     name: "Apache 2.0"
     url: "http://www.apache.org/licenses/LICENSE-2.0.html"
-#host: "virtserver.swaggerhub.com"
-host: "localhost:8080"
-basePath: "/"
-#basePath: "/adriaan.botha/quickMail/1.0.0"
+basePath: "/v1"
 schemes:
-- "http"
+  - "http"
+  - "https"
 paths:
   /sendmail:
     post:
       tags:
-      - "public"
+        - "public"
       summary: "send an email"
-      description: "Sends an email with Mailgun or Sendgird"
+      description: "Sends an email with Mailgun or Sendgrid"
       operationId: "sendMail"
       consumes:
-      - "application/json"
+        - "application/json"
       produces:
-      - "application/json"
+        - "application/json"
       parameters:
-      - in: "body"
-        name: "emailBody"
-        description: "Email body to send"
-        required: false
-        schema:
-          $ref: "#/definitions/EmailBody"
+        - in: "body"
+          name: "emailBody"
+          description: "Email body to send"
+          required: false
+          schema:
+            $ref: "#/definitions/EmailBody"
       responses:
         "200":
+          description: "mail successfully sent"
+        "202":
           description: "mail successfully sent"
         "400":
           description: "invalid input, object invalid"
@@ -44,10 +44,10 @@ definitions:
   EmailBody:
     type: "object"
     required:
-    - "from"
-    - "to"
-    - "subject"
-    - "text"
+      - "from"
+      - "to"
+      - "subject"
+      - "text"
     properties:
       from:
         type: "string"

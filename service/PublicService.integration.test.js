@@ -1,6 +1,6 @@
 const PublicService = require('./PublicService');
 
-describe.skip('PublicService test', () => {
+describe('PublicService test', () => {
 
   // TODO: For the below to continually working we need to update our license with Sendgrid and Mailgun for
   //       now it works since we have enabled sandbox mode for Sendgrid and have test tries left on Mailgun
@@ -20,14 +20,11 @@ describe.skip('PublicService test', () => {
       const emailBody = {
         "to": "Your name <adriaan.botha@gmail.com>",
         "from": "bosotter@protonmail.com",
-        "cc": ["Adriaan <adriaan.botha@gmail.com>"],
-        "bcc": ["Adriaan <hichrist@protonmail.com>"],
         "subject": "Test Email",
         "html": "<p>This is a test email from Sendgrid or MailGun</p>",
         "text": "This is a test email from Sendgrid or MailGun"
       }
       const res = await PublicService.sendMail(emailBody)
-      console.log(JSON.parse(JSON.stringify(res)))
       expect(res.id).not.toBeUndefined()
     })
     test('should call Sendgrid email with minimum basic email details', async () => {
@@ -46,7 +43,6 @@ describe.skip('PublicService test', () => {
         }
       }
       const res = await PublicService.sendMail(emailBody)
-      console.log(JSON.parse(JSON.stringify(res)))
       expect(res.id).toBeUndefined()
     })
   })

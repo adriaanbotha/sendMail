@@ -7,7 +7,7 @@ var fs = require('fs'),
 var app = require('connect')();
 var swaggerTools = require('swagger-tools');
 var jsyaml = require('js-yaml');
-var serverPort = 8080;
+var serverPort = process.env.PORT || 80;
 
 // swaggerRouter configuration
 var options = {
@@ -37,8 +37,12 @@ swaggerTools.initializeMiddleware(swaggerDoc, function (middleware) {
 
   // Start the server
   http.createServer(app).listen(serverPort, function () {
-    console.log('Your server is listening on port %d (http://localhost:%d)', serverPort, serverPort);
-    console.log('Swagger-ui is available on http://localhost:%d/docs', serverPort);
+    console.log('\nWhen running on blooming-fjord-80542.herokuapp.com..........')
+    console.log('Your server is listening on port %d (http://blooming-fjord-80542.herokuapp.com)', serverPort, serverPort);
+    console.log('Swagger-ui is available on http://blooming-fjord-80542.herokuapp.com/docs', serverPort);
+    console.log('\nWhen running on localhost..........')
+    console.log('Locally Your server is listening on port %d (http://localhost:80)', serverPort, serverPort);
+    console.log('Locally Swagger-ui is available on http://localhost:80/docs', serverPort);
   });
 
 });
