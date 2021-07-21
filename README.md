@@ -19,9 +19,11 @@ _The reason for this is to deploy the Mailgun and Sendgrid API keys and keep it 
 
 **Follow these steps to run the API inside Swagger**
 
-1. ![Expand the Swagger UI to look like this](/assets/img/swag1 "Swagger UI")
+1. Expand the Swagger UI to look like this
 
-<br></br>
+
+
+<img src="/assets/img/swag1" alt="Swagger UI" width="200" height="200">
 
 2. ![Push the Try It Button](/assets/img/pushTryIt.png "Try it")
 
