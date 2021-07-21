@@ -21,11 +21,22 @@ _The reason for this is to deploy the Mailgun and Sendgrid API keys and keep it 
 
 1. ![Expand the Swagger UI to look like this](/assets/img/swag1 "Swagger UI")
 
+<br></br>
+
 2. ![Push the Try It Button](/assets/img/pushTryIt.png "Try it")
+
+
+<br></br>
 
 3. ![Change the object inside the email box](/assets/img/changeEmailText.png "Try it")
 
+
+<br></br>
+
 4. ![Push Execute](/assets/img/pushExecute.png "Try it")
+
+
+<br></br>
 
 
 
