@@ -21,26 +21,26 @@ _The reason for this is to deploy the Mailgun and Sendgrid API keys and keep it 
 
 1. Expand the Swagger UI to look like this
 
-![Expand the Swagger UI to look like this](/assets/img/swag1 "Swagger UI") | height="200"
-
-<img src="/assets/img/swag1" alt="Swagger UI" width="200" height="200">
+&nbsp;
+&nbsp;
+![Expand the Swagger UI to look like this](/assets/img/swag1 "Swagger UI")
+&nbsp;
+&nbsp;
 
 2. ![Push the Try It Button](/assets/img/pushTryIt.png "Try it")
+&nbsp;
+&nbsp;
 
-
-<br></br>
 
 3. ![Change the object inside the email box](/assets/img/changeEmailText.png "Try it")
 
-
-<br></br>
+&nbsp;
+&nbsp;
 
 4. ![Push Execute](/assets/img/pushExecute.png "Try it")
 
-
-<br></br>
-
-
+&nbsp;
+&nbsp;
 
 
 #### Calling the API with a Curl example (Please exchange with your details)
